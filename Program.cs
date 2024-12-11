@@ -1,12 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using PlaceOrderConsoleApp;
-using PlaceOrderConsoleApp.Data;
-using PlaceOrderConsoleApp.Interfaces;
-using PlaceOrderConsoleApp.Services;
-
+﻿
 using IHost host = CreateHostBuilder(args).Build();
 using var scope = host.Services.CreateScope();
 var services = scope.ServiceProvider;

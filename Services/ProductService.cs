@@ -1,8 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PlaceOrderConsoleApp.Data;
-using PlaceOrderConsoleApp.Interfaces;
-using PlaceOrderConsoleApp.Models;
-
+﻿
 namespace PlaceOrderConsoleApp.Services;
 
 public class ProductService : IProductService

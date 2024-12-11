@@ -1,6 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PlaceOrderConsoleApp.Models;
-
+﻿
 namespace PlaceOrderConsoleApp.Data;
 
 public class PlaceOrderDbContext : DbContext
