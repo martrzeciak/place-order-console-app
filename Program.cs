@@ -27,8 +27,6 @@ catch (Exception ex)
     logger.LogError(ex, "An unhandled exception occurred during application execution.");
 }
 
-
-
 static IHostBuilder CreateHostBuilder(string[] args)
 {
     return Host.CreateDefaultBuilder(args)
