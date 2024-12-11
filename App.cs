@@ -1,22 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PlaceOrderConsoleApp.Data;
+﻿using PlaceOrderConsoleApp.Interfaces;
 
 namespace PlaceOrderConsoleApp;
 
 public class App
 {
-    private readonly PlaceOrderDbContext _dbContext;
+    private readonly IProductService _productService;
 
-    public App(PlaceOrderDbContext dbContext)
+    public App(IProductService productService)
     {
-        _dbContext = dbContext;
+        _productService = productService;
     }
 
     public async Task Run(string[] args)
     {
         bool exit = false;
-
-        await _dbContext.Database.MigrateAsync();
 
         // Simple menu loop
         while (!exit)
@@ -72,7 +69,7 @@ public class App
         {
             Console.Clear(); // Clear the screen to list products
             Console.WriteLine("\nProduct list:");
-            var products = await _dbContext.Products.ToListAsync();
+            var products = await _productService.GetProductListAsync();
             if (products.Count == 0)
             {
                 Console.WriteLine("No products found.");
